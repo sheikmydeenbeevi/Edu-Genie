@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="EduGenie - AI powered learning assistant"
+    >
+
+    <title>EduGenie - AI Learning Assistant</title>
+
+    <link
+        rel="stylesheet"
+        href="{{ url_for('static', path='style.css') }}"
+    >
+</head>
+
+<body>
+
+<div class="app-shell">
+
+    <header class="hero">
+
+        <div class="hero-content">
+
+            <div class="logo">
+                🎓
+            </div>
+
+            <div>
+                <h1>EduGenie</h1>
+
+                <p>
+                    Your AI-powered learning assistant
+                </p>
+            </div>
+
+        </div>
+
+        <div class="status-badge">
+            Gemini AI
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <section class="intro-card">
+
+            <h2>
+                Learn smarter. Understand faster.
+            </h2>
+
+            <p>
+                Ask questions, simplify difficult concepts,
+                generate quizzes, summarize study material,
+                or create a personalized learning path.
+            </p>
+
+        </section>
+
+
+        <section class="workspace">
+
+            <div class="form-card">
+
+                <label for="task">
+                    What would you like to do?
+                </label>
+
+                <select id="task">
+
+                    <option value="qa">
+                        Ask a Question
+                    </option>
+
+                    <option value="explain">
+                        Explain a Concept
+                    </option>
+
+                    <option value="quiz">
+                        Generate Quiz
+                    </option>
+
+                    <option value="summarize">
+                        Summarize Text
+                    </option>
+
+                    <option value="learn">
+                        Recommend Learning Path
+                    </option>
+
+                </select>
+
+
+                <div id="level-container">
+
+                    <label for="level">
+                        Learner Level
+                    </label>
+
+                    <select id="level">
+
+                        <option value="beginner">
+                            Beginner
+                        </option>
+
+                        <option value="intermediate">
+                            Intermediate
+                        </option>
+
+                        <option value="advanced">
+                            Advanced
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div id="hours-container">
+
+                    <label for="hours">
+                        Study Hours Per Week
+                    </label>
+
+                    <input
+                        id="hours"
+                        type="number"
+                        value="5"
+                        min="1"
+                        max="40"
+                    >
+
+                </div>
+
+
+                <div id="quiz-count-container">
+
+                    <label for="quiz-count">
+                        Number of Questions
+                    </label>
+
+                    <input
+                        id="quiz-count"
+                        type="number"
+                        value="3"
+                        min="1"
+                        max="10"
+                    >
+
+                </div>
+
+
+                <label for="input-text">
+                    Your input
+                </label>
+
+                <textarea
+                    id="input-text"
+                    rows="10"
+                    placeholder="Enter your question, topic, or study material here..."
+                ></textarea>
+
+
+                <button
+                    id="submit-btn"
+                    type="button"
+                >
+                    <span id="button-text">
+                        Generate Answer
+                    </span>
+
+                    <span
+                        id="spinner"
+                        class="spinner hidden"
+                    ></span>
+                </button>
+
+            </div>
+
+
+            <div
+                id="result-card"
+                class="result-card hidden"
+            >
+
+                <div class="result-header">
+
+                    <h2>
+                        Result
+                    </h2>
+
+                    <button
+                        id="copy-btn"
+                        class="secondary-btn"
+                        type="button"
+                    >
+                        Copy
+                    </button>
+
+                </div>
+
+                <div id="result-content"></div>
+
+            </div>
+
+        </section>
+
+
+        <section class="features">
+
+            <div class="feature-card">
+
+                <span>💬</span>
+
+                <h3>Q&A</h3>
+
+                <p>
+                    Get concise answers to educational questions.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <span>💡</span>
+
+                <h3>Explain</h3>
+
+                <p>
+                    Turn complex concepts into simple explanations.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <span>📝</span>
+
+                <h3>Quiz</h3>
+
+                <p>
+                    Generate multiple-choice questions for revision.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <span>📚</span>
+
+                <h3>Summarize</h3>
+
+                <p>
+                    Convert long study material into useful notes.
+                </p>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <span>🗺️</span>
+
+                <h3>Learning Path</h3>
+
+                <p>
+                    Build a structured path from beginner to advanced.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            EduGenie • AI-powered educational assistant
+        </p>
+
+    </footer>
+
+</div>
+
+
+<script
+    src="{{ url_for('static', path='app.js') }}"
+></script>
+
+</body>
+</html>
